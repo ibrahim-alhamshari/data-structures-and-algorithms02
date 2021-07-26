@@ -1,7 +1,6 @@
-# Reverse an Array
-- Write a function called reverseArray which takes an array as an argument. Without utilizing any of the built-in methods available to your language, return an array with elements in reversed order.
+## java-data-structures-and-algorithms
 
-## Whiteboard Process
-![array-reverse](img/array-reverse.png)
-
-## Approach & Efficiency
+CodeChallenge | file 
+--------------- | --------------- 
+Challenge01 | [Challenge01](codeChallenge01/README.md)
+Challenge02 | [Challenge02](codeChallenge02/README.md)
