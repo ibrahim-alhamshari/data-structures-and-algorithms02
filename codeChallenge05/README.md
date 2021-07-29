@@ -25,7 +25,6 @@
 - Space: O(1)
 
 ## API
-<!-- Description of each method publicly available to your Linked List -->
 - First method to add a new nodes to my chain.
 - second one: Insure if my linked list have the entered value or not
 - Third one: Read what I have in my linked list.
