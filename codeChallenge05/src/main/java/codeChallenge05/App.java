@@ -8,7 +8,7 @@ public class App {
         return "Hello world.";
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         System.out.println(new App().getGreeting());
 
@@ -23,6 +23,7 @@ public class App {
         list.insertBefore(7, 14);
 
         list.insertAfterValue(7,31);
+        list.kthFromEnd(7);
         System.out.println(list.tostring());
 
     }

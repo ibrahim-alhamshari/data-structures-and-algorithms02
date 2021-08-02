@@ -56,4 +56,21 @@ public class AppTest {
 
     }
 
+
+    @Test public void kthFromEnd(){
+        LinkedList list =new LinkedList();
+        list.insert(8);
+        list.insert(4);
+        list.insert(9);
+        list.insert(1);
+        list.insert(3);
+        assertEquals(null , list.kthFromEnd(6)); // k is greater than the length of the linked list
+        assertEquals(null, list.kthFromEnd(5)); // k and the length of the list are the same
+        assertEquals(4,list.kthFromEnd(3));  // “Happy Path” where k is not at the end, but somewhere in the middle of the linked list
+    }
+    @Test public void  kthFromEnd2(){
+        LinkedList list =new LinkedList();
+        list.insert(3);
+        assertEquals(null,list.kthFromEnd(2)); // the linked list is of a size 1
+    }
 }
