@@ -16,8 +16,13 @@ public class App {
         list.insert(9);
         list.insert(7);
         list.insert(8);
+        list.insert(21);
 
         list.includes(8);
+        list.append(4);
+        list.insertBefore(7, 14);
+
+        list.insertAfterValue(7,31);
         System.out.println(list.tostring());
 
     }

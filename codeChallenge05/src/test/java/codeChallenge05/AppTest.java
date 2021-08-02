@@ -11,24 +11,49 @@ public class AppTest {
         App classUnderTest = new App();
         assertNotNull("app should have a greeting", classUnderTest.getGreeting());
     }
-    @Test public void linkedListTest(){ // You should change the type of output to (int) for this test
 
+    @Test public void linkedListInsert(){ // You should change the type of output to (int) for this test
         LinkedList list = new LinkedList();
         list.insert(9);
         int value1 = 9;
         assertEquals(value1, list.insert(9) );
          }
-    @Test public void linkedListTest2(){
+
+    @Test public void linkedListIncludes(){
         LinkedList list = new LinkedList();
         list.insert(9);
         int value = 8;
         boolean value2= false;
         assertEquals(value2, list.includes(value));
 }
-    @Test public void linkedListTest3(){
+    @Test public void linkedListToString(){
         LinkedList list = new LinkedList();
         list.insert(9);
         String value2= "{ 9 } -> NULL";
         assertEquals(value2, list.tostring());
 
-}}
+}
+    @Test public void append(){ // You should change the type of output to (int) for this test
+        LinkedList list = new LinkedList();
+        list.append(9);
+        int value1 = 9;
+        assertEquals(value1, list.append(9));
+
+    }
+
+    @Test public void insertBefore(){
+        LinkedList list = new LinkedList();
+        list.insert(2);
+        list.insert(6);
+        assertEquals( "newNode: 12 then: 6" , list.insertBefore(6,12));
+    }
+
+    @Test public void insertAfterValue(){
+        LinkedList list = new LinkedList();
+        list.insert(8);
+        list.insert(4);
+        assertEquals( "current: 8 then: 12" , list.insertAfterValue(8,12));
+
+    }
+
+}

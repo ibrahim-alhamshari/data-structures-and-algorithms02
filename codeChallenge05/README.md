@@ -19,6 +19,19 @@
 - Returns: a string representing all the values in the Linked List, formatted as:
 `"{ a } -> { b } -> { c } -> NULL"`
 
+4. append
+- arguments: new value
+- adds a new node with the given value to the end of the list.
+
+5. insert before
+- arguments: value, new value
+- adds a new node with the given new value immediately before the first node that has the value specified.
+
+6. insert after
+- arguments: value, new value
+- adds a new node with the given new value immediately after the first node that has the value specified.
+
+
 ## Approach & Efficiency
 **Big O**
 - Time: O(n)
@@ -28,3 +41,6 @@
 - First method to add a new nodes to my chain.
 - second one: Insure if my linked list have the entered value or not
 - Third one: Read what I have in my linked list.
+- Fourth one: Adds a new node with the given value to the end of the list.
+- Fifth one: Adds a new node with the given new value immediately before the first node that has the value specified.
+- Sixth one: Adds a new node with the given new value immediately after the first node that has the value specified.
