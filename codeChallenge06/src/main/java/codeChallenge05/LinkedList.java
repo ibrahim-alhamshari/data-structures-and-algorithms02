@@ -69,15 +69,14 @@ public class LinkedList {
     public String insertAfterValue(int previusValue , int newValue){
         Node newNode = new Node(newValue);
         Node current = this.head;
-//        System.out.println(current);
         if (head ==null){
         return "";
         }else {
     while (current !=null&& current.value !=previusValue) {
         current=current.next;
     }
-        newNode.next=current.next;// make the value after the newNode equal the "current.next" ==> a
-        current.next= newNode;// add after the current "newNode"
+        newNode.next=current.next;
+        current.next= newNode;
         }
 
         String finalValue = "current: "+current.value+" then: "+ newNode.value;
