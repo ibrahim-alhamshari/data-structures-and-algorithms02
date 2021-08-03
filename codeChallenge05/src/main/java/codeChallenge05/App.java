@@ -23,7 +23,7 @@ public class App {
         list.insertBefore(7, 14);
 
         list.insertAfterValue(7,31);
-        list.kthFromEnd(7);
+        list.kthFromEnd(10);
         System.out.println(list.tostring());
 
     }

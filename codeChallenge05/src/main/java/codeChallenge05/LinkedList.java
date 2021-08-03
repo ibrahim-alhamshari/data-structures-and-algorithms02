@@ -12,9 +12,9 @@ public class LinkedList {
         if (head == null ){ return 0;}
         Node first = head;
         Node sec = head;
-
+       
         try {
-            if(k<10){
+
             for(int i = 0; i < k; i++){ sec = sec.next; }// to make a difference between the two values equal to the k.
             while (sec.next != null) // loop until the sec.next equal to null, then the first will be located on the (how much difference)
             {
@@ -22,7 +22,7 @@ public class LinkedList {
                 first = first.next;
             }
             System.out.println("Output of K: "+first.value);
-            }
+
 
         }catch(RuntimeException e){
             System.out.println("Error, K is greater than the range of the list.");
