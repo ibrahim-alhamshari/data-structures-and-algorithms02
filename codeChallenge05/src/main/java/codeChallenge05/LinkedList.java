@@ -1,5 +1,10 @@
 package codeChallenge05;
 
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class LinkedList {
 
     public Node head ;
@@ -8,11 +13,39 @@ public class LinkedList {
         this.head = null;
     }
 
+//********************************************** zip_lists ******************************************************
+
+    public static LinkedList zip_lists(LinkedList list1 ,LinkedList list2){
+       LinkedList newList = new LinkedList();
+        int count=0;
+        Node first = list1.head;
+        Node second = list2.head;
+
+        while(first!=null ||second != null){
+            if(second == null){
+                newList.append(first.value);
+                first=first.next;
+            }else if(first == null){
+                newList.append(second.value);
+                second= second.next;
+            } else {
+                newList.append(first.value);
+                newList.append(second.value);
+                first=first.next;
+                second=second.next;
+            }
+//            System.out.println("new Linked: "+ newList);
+        }
+        return newList;
+    }
+
+//********************************************** Kth From End ******************************************************
+
     public Comparable<Integer> kthFromEnd(int k){
         if (head == null ){ return 0;}
         Node first = head;
         Node sec = head;
-       
+
         try {
 
             for(int i = 0; i < k; i++){ sec = sec.next; }// to make a difference between the two values equal to the k.
@@ -31,7 +64,7 @@ public class LinkedList {
         return first.value;
     }
 
-
+//********************************************** insert After Value ******************************************************
 
     public String insertAfterValue(int previusValue , int newValue){
         Node newNode = new Node(newValue);
@@ -51,11 +84,11 @@ public class LinkedList {
         return finalValue;
     }
 
+//********************************************** insert Before ******************************************************
 
     public String insertBefore( int previusValue, int newValue){ //return a string for the test
     Node newNode = new Node(newValue);
         Node current = this.head;
-//        System.out.println(current);
         if (head ==null){
             return "";
         }else {
@@ -69,31 +102,37 @@ public class LinkedList {
         System.out.println(finalValue);
         return finalValue;
     }
+//********************************************** append ******************************************************
 
    public int append(int value){
-        insert(value);
-        return value;
+       Node newValue = new Node(value);
+       Node current = this.head;
+
+       if(head == null){
+           head = newValue;
+       }else {
+
+           while (current.next != null){
+               current = current.next;
+           }
+           current.next = newValue;
+       }
+
+       return newValue.value;
    }
 
-    public double insert(int value){ // change the value to an integer and uncomment the return for the test
+//********************************************** insert ******************************************************
+
+    public int insert(int value){ // change the value to an integer and uncomment the return for the test
         Node newValue = new Node(value);
-        Node current = this.head;
-
-        if(head == null){
-            head = newValue;
-        }else {
-            while (current.next != null){
-                current = current.next;
-            }
-            current.next = newValue;
+        if (head != null ){
+            newValue.next=head;
         }
-
-        //return newValue.value; // uncomment this line for the test.
-
-        return 0;
+       head = newValue;
+        return newValue.value;
     }
 
-
+//********************************************** includes ******************************************************
     public boolean includes(int value){
        Node current= this.head;
 
@@ -110,6 +149,7 @@ public class LinkedList {
         return false;
     }
 
+//********************************************** to string ****************************************************
     public String tostring(){
    Node current= this.head;
    String outPut = "";
@@ -117,7 +157,7 @@ public class LinkedList {
        outPut = outPut + "{ "+current.value+" } -> ";
        current=current.next;
    }
-   outPut=outPut+"NULL";
+   outPut=outPut+"X";
 
    return outPut;
     }

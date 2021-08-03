@@ -3,6 +3,10 @@
  */
 package codeChallenge05;
 
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class App {
     public String getGreeting() {
         return "Hello world.";
@@ -13,18 +17,34 @@ public class App {
         System.out.println(new App().getGreeting());
 
         LinkedList list = new LinkedList();
-        list.insert(9);
-        list.insert(7);
-        list.insert(8);
-        list.insert(21);
+        list.append(9);
+        list.append(7);
+        list.append(8);
+        list.append(21);
 
         list.includes(8);
         list.append(4);
+        list.append(100);
+        list.insert(1);
+        list.insert(1);
         list.insertBefore(7, 14);
 
         list.insertAfterValue(7,31);
         list.kthFromEnd(10);
         System.out.println(list.tostring());
+//*******************************************************************************************
+
+        LinkedList list1 =new LinkedList();
+        list1.append(2);
+        list1.append(5);
+        list1.append(8);
+        LinkedList list2=new LinkedList();
+        list2.append(10);
+        list2.append(20);
+        list2.append(30);
+
+//        LinkedList.zip_lists(list1,list2);
+
 
     }
 
