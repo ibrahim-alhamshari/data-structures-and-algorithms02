@@ -4,7 +4,7 @@
 
 
 ## Whiteboard Process
-<!-- Embedded whiteboard image -->
+![stack-queue-pseudo](stack-queue-pseudo.png)
 
 ## Approach & Efficiency
 
