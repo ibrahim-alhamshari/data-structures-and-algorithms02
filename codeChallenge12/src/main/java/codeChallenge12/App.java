@@ -44,10 +44,11 @@ public class App {
 //        pseudoQueue.dequeue();
 
 //********************************************************************************************
-        AnimalShelter<Cat> animalShelter = new AnimalShelter<Cat>();
-        animalShelter.enqueue("BUIRD");
+        AnimalShelter animalShelter = new AnimalShelter();
+        animalShelter.enqueue(new CatClass("BUIRD"));
         animalShelter.enqueue("ali");
         animalShelter.enqueue("koln");
+        System.out.println();
 
     }
 }
