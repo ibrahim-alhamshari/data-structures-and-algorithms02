@@ -15,4 +15,9 @@ public class CatClass {
     public void setCat(String cat) {
         this.cat = cat;
     }
+
+    @Override
+    public String toString() {
+        return cat ;
+    }
 }

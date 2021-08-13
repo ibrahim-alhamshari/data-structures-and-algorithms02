@@ -18,4 +18,8 @@ public class DogClass{
         this.dog = dog;
     }
 
+    @Override
+    public String toString() {
+        return dog ;
+    }
 }
