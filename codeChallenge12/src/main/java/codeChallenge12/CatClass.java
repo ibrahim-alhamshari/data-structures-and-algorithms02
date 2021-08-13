@@ -21,6 +21,6 @@ public class CatClass {
 
     @Override
     public String toString() {
-        return cat;
+        return cat ;
     }
 }

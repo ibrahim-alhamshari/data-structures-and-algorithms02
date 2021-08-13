@@ -8,7 +8,7 @@ public class App {
         return "Hello world.";
     }
 
-    public static <Cat> void main(String[] args) {
+    public static void main(String[] args) {
 
         System.out.println(new App().getGreeting());
 
@@ -46,9 +46,14 @@ public class App {
 //********************************************************************************************
         AnimalShelter animalShelter = new AnimalShelter();
         animalShelter.enqueue(new CatClass("BUIRD"));
-        animalShelter.enqueue("ali");
-        animalShelter.enqueue("koln");
-        System.out.println();
+ stack-queue-animal-shelter
+        animalShelter.enqueue(new CatClass("ali"));
+        animalShelter.enqueue(new CatClass("koln"));
+        animalShelter.enqueue(new DogClass("Butschy"));
+        animalShelter.enqueue(new DogClass("Bell"));
 
+
+
+        System.out.println(animalShelter.dequeue("dog").toString());
     }
 }
