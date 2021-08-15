@@ -19,7 +19,9 @@ public class App {
         binarySearchTree.add(32);
 
         binarySearchTree.contains(8);
+
 //        binarySearchTree.findMaxValue();
+
         System.out.println( "Max value: "+binarySearchTree.findMaxValue());
     }
 }
