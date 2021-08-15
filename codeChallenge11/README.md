@@ -1,10 +1,10 @@
 # Challenge Summary
-<!-- Description of the challenge -->
+
 - Creating a new class called pseudo queue. Internally, utilize 2 Stack instances to create and manage the queue.
 
 
 ## Whiteboard Process
-<!-- Embedded whiteboard image -->
+![stack-queue-pseudo](stack-queue-pseudo.png)
 
 ## Approach & Efficiency
 
@@ -19,4 +19,5 @@
 ## Solution
 
 - [The Code of the challenge](src/main/java/codeChallenge10/pseudoQueue.java)
+
 - [The Test Code for the methods](src/test/java/codeChallenge10/AppTest.java)

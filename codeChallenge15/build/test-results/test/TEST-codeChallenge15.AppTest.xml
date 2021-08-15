@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="codeChallenge15.AppTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-12T16:02:03" hostname="DESKTOP-GLPID2V" time="0.011">
+  <properties/>
+  <testcase name="BinaryTree" classname="codeChallenge15.AppTest" time="0.011"/>
+  <system-out><![CDATA[pre_Order method: 10
+in_Order method: 10
+24
+post_Order method: 24
+10
+post_Order method: 10
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
