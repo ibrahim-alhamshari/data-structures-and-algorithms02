@@ -63,4 +63,21 @@ public class AppTest {
         assertEquals(23 , tree.findMaxValue());
     }
 
+    @Test public void breadthFirst(){
+        BinarySearchTree binarySearchTree = new BinarySearchTree();
+        Node root = new Node(5);
+        root.left = new Node(7);
+        root.left.left = new Node(14);
+        root.right = new Node(3);
+        root.right.right = new Node(8);
+        ArrayList<Integer> list = new ArrayList();
+        list.add(5);
+        list.add(7);
+        list.add(3);
+        list.add(14);
+        list.add(8);
+
+        assertEquals( list, binarySearchTree.traverseLevelOrder(root));
+    }
+
 }
