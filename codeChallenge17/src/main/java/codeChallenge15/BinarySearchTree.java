@@ -80,19 +80,25 @@ public class BinarySearchTree extends BinaryTree {
     }
 
     public ArrayList<Integer> traverseLevelOrder(Node tree){
-        List<Integer> list = new ArrayList<>();
-        System.out.println(tree.left.value);
-        Queue queue = new Queue();
-        queue.enqueue(tree.value);
 
-        while (!queue.isEmpty()) {
-           Node node= queue.dequeue();
-            if(tree.left != null){
-                queue.enqueue(tree.left.value);
-            }else if(tree.right != null){
-                queue.enqueue(tree.right.value);
+        List<Integer> list = new ArrayList<>();
+        List<Node> listOfNodes = new ArrayList<Node>();
+
+        listOfNodes.add(tree);
+        while (listOfNodes.size()!=0) {
+           Node node= listOfNodes.get(0);
+            list.add(node.value);
+            listOfNodes.remove(0);
+
+            if(node.left != null){
+                listOfNodes.add(node.left);
             }
-            list.add(tree.value);
+            if(node.right != null){
+                listOfNodes.add(node.right);
+            }
+
+            System.out.println(list);
+
         }
         return (ArrayList<Integer>) list;
     }

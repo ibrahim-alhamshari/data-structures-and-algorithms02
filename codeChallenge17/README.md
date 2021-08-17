@@ -1,11 +1,16 @@
 # Challenge Summary
-<!-- Description of the challenge -->
+* Writing a function called breadth first
+- Arguments: tree
+- Return: list of all values in the tree, in the order they were encountered
 
 ## Whiteboard Process
-![tree-breadth](tree-breadth-.png)
+![tree-breadth](tree-breadth-first.png)
 
 ## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+- **Bid O**
+- Time: O(n)
+- Space: O(n)
 
 ## Solution
-<!-- Show how to run your code, and examples of it in action -->
+- [Code for my method](src/main/java/codeChallenge15/BinarySearchTree.java)
+- [Test Code](src/test/java/codeChallenge15/AppTest.java)
