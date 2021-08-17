@@ -12,15 +12,15 @@
 - If pref is not "dog" or "cat" then return `null`.
 
 ## Whiteboard Process
-<!-- Embedded whiteboard image -->
+![stack-queue-animal-shelter](stack-queue-animal-shelter.png)
 
 ## Approach & Efficiency
 1. **Big O for enqueue method**
-- Time:
-- Space:
+- Time: O(1)
+- Space:O(1)
 2. **Big O for dequeue method**
-- Time:
-- Space:
+- Time: O(1)
+- Space: O(1)
 
 ## Solution
 - [The Code of the challenge](src/main/java/codeChallenge12/AnimalShelter.java)

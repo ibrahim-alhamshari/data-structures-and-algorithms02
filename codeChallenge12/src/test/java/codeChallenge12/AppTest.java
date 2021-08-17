@@ -92,4 +92,30 @@ public class AppTest {
         assertEquals(java.util.Optional.of(51) , java.util.Optional.ofNullable(pseudoQueue.enqueue(36)));
         assertEquals(java.util.Optional.of(3) , java.util.Optional.ofNullable(pseudoQueue.dequeue()));
     }
+
+    @Test public void animalShelter_enqueue(){
+        AnimalShelter animalShelter = new AnimalShelter();
+        animalShelter.enqueue(new CatClass("BUIRD"));
+        animalShelter.enqueue(new CatClass("Shiraz"));
+        animalShelter.enqueue(new DogClass("Komp"));
+        assertEquals("{cat_rear= Shiraz, dog_rear= Komp}", animalShelter.toString());
+
+        animalShelter.enqueue(new DogClass("Losy"));
+        assertEquals("{cat_rear= Shiraz, dog_rear= Losy}", animalShelter.toString());
+
+
+    }
+
+    @Test public void animalShelter_dequeue(){
+        AnimalShelter animalShelter = new AnimalShelter();
+        animalShelter.enqueue(new CatClass("BUIRD"));
+        animalShelter.enqueue(new CatClass("Shiraz"));
+        animalShelter.enqueue(new DogClass("Komp"));
+        animalShelter.enqueue(new DogClass("Remo"));
+        animalShelter.enqueue(new DogClass("choa"));
+
+        assertEquals("Komp" , animalShelter.dequeue("dog").toString());
+        assertEquals("BUIRD" , animalShelter.dequeue("cat").toString());
+        assertEquals(null , animalShelter.dequeue("Bird"));
+    }
 }

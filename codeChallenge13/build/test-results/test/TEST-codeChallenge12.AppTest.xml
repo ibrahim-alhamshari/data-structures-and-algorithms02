@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="codeChallenge12.AppTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-12T21:27:40" hostname="DESKTOP-GLPID2V" time="0.009">
+  <properties/>
+  <testcase name="validationTest" classname="codeChallenge12.AppTest" time="0.009"/>
+  <system-out><![CDATA[ error
+true
+false
+false
+false
+ error
+ error
+ error
+ error
+true
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
