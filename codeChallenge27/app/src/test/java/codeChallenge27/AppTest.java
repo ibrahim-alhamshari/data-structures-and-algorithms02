@@ -4,11 +4,19 @@
 package codeChallenge27;
 
 import org.junit.jupiter.api.Test;
+
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
     @Test void appHasAGreeting() {
         App classUnderTest = new App();
         assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
+    }
+    @Test
+    public void mergeSortTest() throws Exception{
+        int[] arr = {9, 14, 6 , 3};
+        assertEquals("[3, 6, 9, 14]", Arrays.toString(MergSort.mergeSort(arr)) );
     }
 }
