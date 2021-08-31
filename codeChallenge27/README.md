@@ -2,7 +2,7 @@
 Implementing the Merge Sort in a function that take an array as an arguments and return a sorted array.
 
 ## Whiteboard Process
-![Merge Sort](codeChallenge27.png)
+![Merge Sort](code27.png)
 
 ## Approach & Efficiency
 - **Big O**
