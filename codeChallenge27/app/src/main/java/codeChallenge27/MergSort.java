@@ -15,7 +15,7 @@ public class MergSort {
         }
 
         int midPoint = array.length / 2;
-        System.out.println(midPoint);
+//        System.out.println(midPoint);
         int[] left = new int[midPoint];
         int[] right;
 
