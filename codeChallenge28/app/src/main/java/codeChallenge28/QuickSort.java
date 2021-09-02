@@ -2,7 +2,7 @@ package codeChallenge28;
 
 public class QuickSort {
 
-    public void quickSort(int[] arr, int left, int right){
+    public static int[] quickSort(int[] arr, int left, int right){
         if (left < right)
         {
             // Partition the array by setting the position of the pivot value
@@ -12,12 +12,13 @@ public class QuickSort {
             // Sort the right
             quickSort(arr, position + 1, right);
         }
+
+        return arr;
     }
 
-    private int partition(int[] arr, int left, int right) {
+    private static int partition(int[] arr, int left, int right) {
         // set a pivot value as a point of reference
         int pivot = arr[right];
-       printArray(arr , arr.length);
         // create a variable to track the largest index of numbers lower than the defined pivot
         int low  = (left - 1);
 
@@ -39,13 +40,11 @@ public class QuickSort {
     }
 
 
-    public void swap(int[]arr,int low,int j){
+    public static void swap(int[]arr,int low,int j){
         int temp;
         temp = arr[low];
         arr[low] = arr[j];
         arr[j] = temp;
-//        System.out.println(" arr[i]: "+ arr[i]);
-//        System.out.println(" arr[k]: "+ arr[k]);
 
     }
 

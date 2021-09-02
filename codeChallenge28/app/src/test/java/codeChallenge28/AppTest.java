@@ -4,11 +4,27 @@
 package codeChallenge28;
 
 import org.junit.jupiter.api.Test;
+
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
     @Test void appHasAGreeting() {
         App classUnderTest = new App();
         assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
+    }
+
+    @Test
+    public void quickSortTest(){
+
+        int[] arr = { 7 , 9, 2 , 6 , 14 , 6};
+        int n = arr.length;
+        QuickSort quickSort= new QuickSort();
+//        quickSort.quickSort(arr, 0, n-1);
+
+        String result= "[2, 6, 6, 7, 9, 14]";
+
+        assertEquals(result , Arrays.toString(QuickSort.quickSort(arr, 0, n-1)));
     }
 }
