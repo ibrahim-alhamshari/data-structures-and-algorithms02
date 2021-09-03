@@ -35,3 +35,6 @@
 2. get: getting a value for a key in the table, and if the key does not have any values it will return false.
 3. contain: it will search in the table to check if it contains the targeted key.
 4. hash: It will change the value of the key to be hashed.
+
+- See my code [HashTable Code](app/src/main/java/codeChallenge30/HashTable.java)
+- See the test code [Test HashTable](app/src/test/java/codeChallenge30/AppTest.java)
