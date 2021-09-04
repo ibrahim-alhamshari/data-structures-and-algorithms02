@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="codeChallenge30.AppTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-09-03T21:00:03" hostname="DESKTOP-7S912L0" time="0.021">
+  <properties/>
+  <testcase name="hash()" classname="codeChallenge30.AppTest" time="0.021"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

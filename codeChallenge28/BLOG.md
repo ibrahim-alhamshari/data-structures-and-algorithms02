@@ -4,17 +4,19 @@
 
 ![BLOG](BLOG.png)
 
-* We have this array: [8,4,23,42,16,15]
-* The pivot will be the last number it the array
+<br>
 
-    * The pivot will be in my case for the first time: (15)
-    * The array will be devided into two halfs around the pivot.
-        * The array will be arranged to be: [8, 4, *15*, 42, 16, 23]
-        * Now the left side will be sorted in comparason with the pivot: [4, 8, 15, 42, 16, 23]
+### **Trace Process**
 
-    * Now we will be having a new pivot equal: (23)
-    * Again we will start compairing by this pivot
-        * The array will be arranged to be: [8, 4, 15, 16, 42, 23]
-        * Now the left side will be sorted in comparason with the pivot: [4, 8, 15, 16, 23, 42]
+* **Input: [8,4,23,42,16,15]**
+    * **Pass 1**: Make the pivot number is the last one (15) and compaire all the elements with it, the lower numbers will be befor it and the upper numbers will be after it. Then the array will become: [8, 4, **15**, 42, 16, 23]
 
-* **output: [4, 8, 15, 16, 23, 42]**
+    * **Pass 2**: The numbers before it(15) will be sorted: 4<8 ==> [4, 8, 15, 42, 16, 23]
+
+    * **Pass 3**: Make a pivot number again which will be the last number(23), and again the lower numbers will be moved befor it, abd the greater numbers will be move after it. Then the array will become: [4, 8, 15, 16, **23**, 42]
+
+    * **Pass 4**: Again, the numbers befor it(23) will be sorted, but the sorting will begin from the last pivot which was(15), so it will not touch the numbers befor (5). Then the sorting will begin with: (16). No numbers to compaire so it will be by default sorted and the array will become: [4, 8, 15, 16 , 23, 42]
+
+    * **Pass 5**: We reached to the sorted array which we were aim.
+- **OutPut: [4, 8, 15, 16 , 23, 42]**
+
