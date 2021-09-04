@@ -1,12 +1,12 @@
 package codeChallenge30;
 
-public class Node<K, V> {
+public class ListOfNodes<K, V> {
 
     K key;
     V value;
-    Node next;
+    ListOfNodes next;
 
-   Node(K key, V value){
+   ListOfNodes(K key, V value){
         this.value=value;
         this.key=key;
     }

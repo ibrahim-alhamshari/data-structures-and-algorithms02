@@ -5,12 +5,12 @@ import java.util.Objects;
 
 public class HashTable {
 
-    private Node[] table; // The hash table, represented as an array of linked lists.
+    private ListOfNodes[] table; // The hash table, represented as an array of linked lists.
     private int count;
     private int size=1; // The number of (key,value) pairs in the hash table.
 
     public HashTable(){
-        table= new Node[size];
+        table= new ListOfNodes[size];
     }
 
     public int hashCode(String key){
@@ -28,35 +28,35 @@ public class HashTable {
     int index = getIndex(key);
     int hashCode= hashCode(key);
 
-    Node head = table[index]; // For traversing the linked list at the appropriate location.
-        while (head != null){
-            if(head.key.equals(key))
+    ListOfNodes list = table[index]; // For traversing the linked list at the appropriate location.
+        while (list != null){
+            if(list.key.equals(key))
                 break;
-            head= head.next;
+            list= list.next;
         }
 
-        if(head != null){
-            head.value=value;
+        if(list != null){
+            list.value=value;
         }else {
             if(count >= 0.75*table.length){
                 resize();
                 index = getIndex(key);
             }
 
-            Node newNode = new Node(key , value);
-            newNode.next=table[index];
-            table[index]= newNode;
+            ListOfNodes newListOfNodes = new ListOfNodes(key , value);
+            newListOfNodes.next=table[index];
+            table[index]= newListOfNodes;
             count++;
         }
     }
 
     public void resize(){
-     Node[] newTable = new Node[table.length+1];
+     ListOfNodes[] newTable = new ListOfNodes[table.length+1];
 
      for(int i =0; i< table.length;i++){
-         Node list = table[i]; //[0] ==> [1 => 2 => 3]
+         ListOfNodes list = table[i]; //[0] ==> [1 => 2 => 3]
          while (list != null){
-             Node current = list.next;
+             ListOfNodes current = list.next;
              int hash = (Math.abs(list.key.hashCode())) % newTable.length;
              list.next=newTable[hash];
              newTable[hash] = list;
@@ -68,7 +68,7 @@ public class HashTable {
 
     public Comparable<Integer> get(String key){
         int index = getIndex(key);
-        Node list = table[index];
+        ListOfNodes list = table[index];
         while (list!= null){
             if (list.key.equals(key)){
                 return (int) list.value;
@@ -80,7 +80,7 @@ public class HashTable {
 
     public boolean containsKey(String key) {
         int index = getIndex(key);  // In what location should key be?
-        Node list = table[index];  // For traversing the list.
+        ListOfNodes list = table[index];  // For traversing the list.
 
         while (list != null) {
             if (list.key.equals(key)){
