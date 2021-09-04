@@ -57,9 +57,9 @@ public class HashTable {
          ListOfNodes list = table[i]; //[0] ==> [1 => 2 => 3]
          while (list != null){
              ListOfNodes current = list.next;
-             int hash = (Math.abs(list.key.hashCode())) % newTable.length;
-             list.next=newTable[hash];
-             newTable[hash] = list;
+             int index = (Math.abs(list.key.hashCode())) % newTable.length;
+             list.next=newTable[index];
+             newTable[index] = list;
              list= current;
          }
      }
