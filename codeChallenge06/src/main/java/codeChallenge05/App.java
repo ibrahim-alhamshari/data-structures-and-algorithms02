@@ -29,7 +29,8 @@ public class App {
         list.insert(1);
         list.insertBefore(7, 14);
 
-        list.insertAfterValue(7,31);
+
+        System.out.println(list.insertAfterValue(7,31));
         list.kthFromEnd(10);
         System.out.println(list.tostring());
 //*******************************************************************************************

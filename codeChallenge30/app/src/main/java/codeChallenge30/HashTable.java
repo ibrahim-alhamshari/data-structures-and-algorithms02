@@ -1,7 +1,7 @@
 package codeChallenge30;
 
 
-import java.util.Objects;
+import java.util.*;
 
 public class HashTable {
 
@@ -84,14 +84,40 @@ public class HashTable {
 
         while (list != null) {
             if (list.key.equals(key)){
-                System.out.println(true);
+//                System.out.println(true);
                 return true;
             }
             list = list.next; //[0] ==> [1 => 2 => 3]
         }
         // If we get to this point, we know that the key does not exist in the table.
-        System.out.println(false);
+//        System.out.println(false);
         return false;
+    }
+
+    public String repeatedWord(String sentence){
+
+        String[] wordsArray = sentence.toLowerCase(Locale.ROOT).split(" ");
+        String[] wordsAfterReplace= new String[wordsArray.length];
+
+        for (int i =0; i< wordsArray.length;i++){
+          wordsAfterReplace[i] = wordsArray[i].replace("," , "");
+        }
+
+        HashSet<String> hashSetObject = new HashSet<>();
+
+        for (int i=0; i<=wordsAfterReplace.length-1; i++){
+
+            String word = wordsAfterReplace[i];
+            if (hashSetObject.contains(word)){
+                System.out.println(word);
+                return word;
+            } else{
+                hashSetObject.add(word);
+            }
+
+        }
+        System.out.println(" No thing to compare");
+        return "";
     }
 
 }
