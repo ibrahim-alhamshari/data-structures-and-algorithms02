@@ -104,20 +104,19 @@ public class LinkedList {
 //********************************************** append ******************************************************
 
    public int append(int value){
-       Node newValue = new Node(value);
+       Node newNode = new Node(value);
        Node current = this.head;
 
        if(head == null){
-           head = newValue;
+           head = newNode;
        }else {
 
            while (current.next != null){
                current = current.next;
            }
-           current.next = newValue;
+           current.next = newNode;
        }
-
-       return newValue.value;
+       return newNode.value;
    }
 
 //********************************************** insert ******************************************************

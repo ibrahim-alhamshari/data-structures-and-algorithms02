@@ -16,6 +16,9 @@
 4. hash
     - Arguments: key
     - Returns: Index in the collection for that key
+5. repeated word
+    - Arguments: string
+    - Return: string(word of the incomming string)
 
 ## Approach & Efficiency
 1. **Big O for add**
@@ -30,11 +33,21 @@
 4. **Big O for hash**
     - Time: O(1)
     - Space: O(1)
+5. **Big O for repeatedWord**
+    - Time: O(n)
+    - Space: O(n)
+
 ## API
 1. add: adding a new pair to the hash table.
 2. get: getting a value for a key in the table, and if the key does not have any values it will return false.
 3. contain: it will search in the table to check if it contains the targeted key.
 4. hash: It will change the value of the key to be hashed.
+5. repeatedWord: This method finds the first word to occur more than once in a string.
 
-- See my code [HashTable Code](app/src/main/java/codeChallenge30/HashTable.java)
-- See the test code [Test HashTable](app/src/test/java/codeChallenge30/AppTest.java)
+## Solution
+
+Table of contents | link 
+--------------- | --------------- 
+HashTable Code | [HashTable Code](app/src/main/java/codeChallenge30/HashTable.java)
+Test HashTable | [Test HashTable](app/src/test/java/codeChallenge30/AppTest.java)
+repeatedWord   | [repeatedWord](app/src/main/java/codeChallenge30/HashTable.java) See the method "repeatedWord"

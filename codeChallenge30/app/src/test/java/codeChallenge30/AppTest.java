@@ -56,4 +56,15 @@ class AppTest {
 
         assertEquals(hashedKey, hashTable.hashCode("Loay"));
     }
+
+    @Test
+    public void repeatedWord(){
+        HashTable hashTable = new HashTable();
+        String sentence1="It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York...";
+        String sentence2 = "Hello world from Jordan";
+
+        assertEquals("summer" , hashTable.repeatedWord(sentence1));
+        assertEquals("" , hashTable.repeatedWord(sentence2));
+
+    }
 }
