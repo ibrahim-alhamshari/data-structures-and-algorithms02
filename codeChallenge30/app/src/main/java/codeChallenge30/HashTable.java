@@ -109,7 +109,7 @@ public class HashTable {
 
             String word = wordsAfterReplace[i];
             if (hashSetObject.contains(word)){
-                System.out.println(word);
+//                System.out.println(word);
                 return word;
             } else{
                 hashSetObject.add(word);
