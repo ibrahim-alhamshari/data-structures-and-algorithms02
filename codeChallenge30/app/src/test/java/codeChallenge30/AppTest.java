@@ -5,6 +5,8 @@ package codeChallenge30;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -65,6 +67,31 @@ class AppTest {
 
         assertEquals("summer" , hashTable.repeatedWord(sentence1));
         assertEquals("" , hashTable.repeatedWord(sentence2));
+
+    }
+
+    @Test
+    public void treeToArray(){
+        Node root = new Node(23);
+        root.left = new Node(58);
+        root.left.left = new Node(6);
+        root.right = new Node(31);
+        root.right.right = new Node(71);
+        root.left.right = new Node(142);
+
+        BinaryTree tree1 = new BinaryTree(root);
+
+        Node root2 = new Node(18);
+        root2.left = new Node(58);
+        root2.left.left = new Node(7);
+        root2.right = new Node(31);
+        root2.right.right = new Node(71);
+        root2.left.right = new Node(142);
+        BinaryTree tree2 = new BinaryTree(root2);
+
+        ArrayList<String> arrayList= new ArrayList<String>(List.of(new String[]{"58", "142", "31", "71"}));
+
+        assertEquals(arrayList ,App.treeToArrayMethod(tree1,tree2) );
 
     }
 }
