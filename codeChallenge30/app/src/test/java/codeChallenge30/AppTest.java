@@ -6,6 +6,7 @@ package codeChallenge30;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
 
@@ -93,5 +94,23 @@ class AppTest {
 
         assertEquals(arrayList ,App.treeToArrayMethod(tree1,tree2) );
 
+    }
+
+    @Test
+    public void hashMapByLeftJoin(){
+        LeftJoin leftJoin = new LeftJoin();
+        HashMap<String, String> hashMap1= new HashMap<>();
+        hashMap1.put("fond" , "enamored");
+        hashMap1.put("wrath" , "anger");
+
+        HashMap<String,String> hashMap2= new HashMap<>();
+        hashMap2.put("fond" , "Engineer");
+
+        List<String> list = new ArrayList<>();
+
+        list.add("[\"wrath\", \"anger\", NULL]");
+        list.add("[\"fond\", \"enamored\", \"Engineer\"]");
+
+        assertEquals(list, leftJoin.hashmapLeftJoin(hashMap1, hashMap2));
     }
 }

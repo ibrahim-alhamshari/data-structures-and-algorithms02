@@ -23,5 +23,8 @@ public class App {
         root.left.right=new Node(10);
 
         binarySearchTree.traverseLevelOrder( root);
+
+        BinaryTree binaryTree = new BinaryTree();
+        binaryTree.pre_Order(root);
     }
 }

@@ -4,6 +4,7 @@
 package codeChallenge30;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class App {
     public String getGreeting() {
@@ -46,8 +47,23 @@ public class App {
         root2.right.right = new Node(35);
         root2.left.right = new Node(10);
         BinaryTree tree2 = new BinaryTree(root2);
+//        System.out.println(treeToArrayMethod(tree1, tree2));
 
-        System.out.println(treeToArrayMethod(tree1, tree2));
+//**************************************************************************************************************************
+
+        LeftJoin leftJoin = new LeftJoin();
+        HashMap<String, String> map1= new HashMap<>();
+        map1.put("fond" , "enamored");
+        map1.put("wrath" , "anger");
+        map1.put("diligent" , "employed");
+        map1.put("outfil" , "grap");
+        map1.put("Qaed" , "Doctor");
+
+        HashMap<String,String> map2= new HashMap<>();
+        map2.put("fond" , "Engineer");
+        map2.put("wrath" , "Programmer");
+        map2.put("Qaed" , "Raee");
+        leftJoin.hashmapLeftJoin(map1, map2);
 
     }
 
@@ -75,4 +91,6 @@ public class App {
         }
         return array2;
     }
+
+
 }

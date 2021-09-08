@@ -13,6 +13,23 @@ public class LinkedList {
         this.head = null;
     }
 
+
+
+   public void delete(int node) {
+       if (head == null) {
+           return;
+       }
+       Node current = this.head;
+       while (current != null) {
+           if (current.next.value == node) {
+               current.next = current.next.next;
+               break;
+           }
+           current = current.next;
+       }
+   }
+
+
 //********************************************** zip_lists ******************************************************
 
     public static LinkedList zip_lists(LinkedList list1 ,LinkedList list2){
