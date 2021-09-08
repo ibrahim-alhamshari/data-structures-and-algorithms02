@@ -32,6 +32,9 @@ public class App {
         list.insertAfterValue(7,31);
         list.kthFromEnd(10);
         System.out.println(list.tostring());
+        list.delete(list.head.next.next.next.value);
+
+        System.out.println(list.tostring());
 //*******************************************************************************************
 
         LinkedList list1 =new LinkedList();
