@@ -22,16 +22,13 @@
 
 
 ## Approach & Efficiency
-1. Big O
-- Time: O(n)
-- Space: O(n)
 
-2. **Big O for Binary Search Tree(Add method)**
-- Time: O(n)
-- Space: O(n)
+1. **Big O for Binary Search Tree(Add method)**
+- Time: O(log(n))-> Because it will visit each node in the tree and the number of nodes will increase each time.
+- Space: O(1)-> Because we are not defining a new lists or arrays, so, it takes the same amount of space regardless of the input size
 
-3. **Big O for Binary Search Tree(contain method)**
-- Time: O(n)
+2. **Big O for Binary Search Tree(contain method)**
+- Time: O(log(n))
 - Space: O(1)
 
 ## API

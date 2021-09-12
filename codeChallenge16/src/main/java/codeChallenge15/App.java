@@ -13,15 +13,27 @@ public class App {
         System.out.println(new App().getGreeting());
 
         BinarySearchTree binarySearchTree = new BinarySearchTree();
-        binarySearchTree.add(20);
-        binarySearchTree.add(8);
-        binarySearchTree.add(12);
-        binarySearchTree.add(32);
+        binarySearchTree.add(45);
+        binarySearchTree.add(50);
+        binarySearchTree.add(55);
+        binarySearchTree.add(47);
 
-        binarySearchTree.contains(8);
+        Node root= new Node(15);
+        root.left=new Node(20);
+        root.right= new Node(10);
+        root.left.left= new Node(25);
+        root.left.right= new Node(25);
+        root.right.left= new Node(25);
+        root.right.right = new Node(25);
+
+
+//        binarySearchTree.contains(8);
 
 //        binarySearchTree.findMaxValue();
 
-        System.out.println( "Max value: "+binarySearchTree.findMaxValue());
+        binarySearchTree.maxNum();
+        System.out.println( "Max value: "+binarySearchTree.visitAllNodes(binarySearchTree.root));
+
+        System.out.println(binarySearchTree.toString());
     }
 }
