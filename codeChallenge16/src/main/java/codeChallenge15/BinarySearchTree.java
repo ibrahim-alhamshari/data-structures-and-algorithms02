@@ -12,11 +12,6 @@ public class BinarySearchTree extends BinaryTree {
 
     public boolean contains(int value) {
         System.out.println(findKey(root, value));
-        pre_Order(root);
-        System.out.println("++++++++++++++++++++++++++++++++++++++++++++++");
-        post_Order(root);
-        System.out.println("++++++++++++++++++++++++++++++++++++++++++++++");
-        in_Order(root);
         return findKey(root, value);
     }
 
@@ -66,11 +61,59 @@ public class BinarySearchTree extends BinaryTree {
         int result = root.value;
         int liftSide = methodFindMaxValue(root.left);
         int rightSide = methodFindMaxValue( root.right);
+
         if (liftSide > result){
             return liftSide;
         }else if(rightSide > result){
             return rightSide;
         }
         return result;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public int maxNum(){
+       return visitAllNodes(this.root);
+
+    }
+
+
+    public int visitAllNodes(Node root) {
+
+        if(root == null){
+        return 0;
+        }
+
+      int max = root.value;
+       int leftSide= visitAllNodes(root.left);
+       int rightSide = visitAllNodes(root.right);
+
+       if(leftSide> max){
+           return leftSide;
+       }else if(rightSide> max){
+           return rightSide;
+       }
+       return max;
+
     }
 }

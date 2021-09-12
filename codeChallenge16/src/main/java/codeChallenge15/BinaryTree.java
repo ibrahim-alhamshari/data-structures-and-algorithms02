@@ -13,7 +13,7 @@ public class BinaryTree {
         try {
             if (root != null) {
                 System.out.println("pre_Order method: " + root.value);
-                pre_Order(root.left);
+                pre_Order(root.left);//
                 pre_Order(root.right);
                 return true;
         }
@@ -29,7 +29,7 @@ public class BinaryTree {
             if (node != null) {
                 in_Order(node.left);
                 System.out.println("in_Order method: " + node.value);
-                intArrayList.add(node.value);
+//                intArrayList.add(node.value);
                 in_Order(node.right);
                 return true;
             }
