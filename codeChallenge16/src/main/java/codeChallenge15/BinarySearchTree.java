@@ -70,50 +70,19 @@ public class BinarySearchTree extends BinaryTree {
         return result;
     }
 
+    public boolean ifMirror(Node root1 , Node root2){
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    public int maxNum(){
-       return visitAllNodes(this.root);
-
-    }
-
-
-    public int visitAllNodes(Node root) {
-
-        if(root == null){
-        return 0;
+        if(root1==null && root2 == null){
+            return true;
+        }
+        if(root1==null || root2 ==null){
+            return false;
         }
 
-      int max = root.value;
-       int leftSide= visitAllNodes(root.left);
-       int rightSide = visitAllNodes(root.right);
+        boolean first = ifMirror(root1.left, root2.right);
+        boolean second = ifMirror(root1.right, root2.left);
 
-       if(leftSide> max){
-           return leftSide;
-       }else if(rightSide> max){
-           return rightSide;
-       }
-       return max;
-
+        return first && second;
     }
+
 }
