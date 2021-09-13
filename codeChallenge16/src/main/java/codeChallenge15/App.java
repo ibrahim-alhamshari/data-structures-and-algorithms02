@@ -26,13 +26,24 @@ public class App {
         root.right.left= new Node(25);
         root.right.right = new Node(25);
 
+        Node root2= new Node(15);
+        root2.left=new Node(20);
+        root2.right= new Node(10);
+        root2.left.left= new Node(25);
+        root2.left.right= new Node(25);
+        root2.right.left= new Node(25);
+        root2.right.right = new Node(25);
+
+        System.out.println(binarySearchTree.ifMirror(root, root2));
+
+//                       15                           15
+//                20            10             20              10
+//            25      25     25                   25       25       25
 
 //        binarySearchTree.contains(8);
 
 //        binarySearchTree.findMaxValue();
 
-        binarySearchTree.maxNum();
-        System.out.println( "Max value: "+binarySearchTree.visitAllNodes(binarySearchTree.root));
 
         System.out.println(binarySearchTree.toString());
     }
