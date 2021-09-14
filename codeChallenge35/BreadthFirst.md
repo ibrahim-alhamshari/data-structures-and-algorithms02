@@ -6,7 +6,7 @@
    - Display the collection
 
 ## Whiteboard Process
-<!-- Embedded whiteboard image -->
+![breadthFirst](breadthFirst.png)
 
 ## Approach & Efficiency
 - **Big O**
