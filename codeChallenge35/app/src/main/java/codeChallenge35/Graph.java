@@ -38,8 +38,29 @@ public class Graph {
     }
 
     public int getSize(){
-        System.out.println(adjVertices.size());
+//        System.out.println(adjVertices.size());
         return adjVertices.size();
+    }
+
+    public List<Vertex> breadthFirst( Vertex vertex){
+        List<Vertex> visited  =new ArrayList<>();
+        List<Vertex> listOfVertex = new ArrayList<>();
+
+        listOfVertex.add(vertex);
+
+        while (listOfVertex.size() != 0){
+            visited.add(listOfVertex.get(0));
+            List<Vertex> allNeighbors = adjVertices.get(listOfVertex.get(0));
+            listOfVertex.remove(0);
+            System.out.println("allNeighbors: "+allNeighbors);
+            for(Vertex vertex2: allNeighbors){
+                if(!visited.contains(vertex2)){
+                listOfVertex.add(vertex2);
+                System.out.println(vertex2);
+                }
+            }
+        }
+        return visited;
     }
 
 

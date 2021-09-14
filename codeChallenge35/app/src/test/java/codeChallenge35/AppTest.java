@@ -83,4 +83,32 @@ class AppTest {
 
         assertEquals( 2, graph.getSize());
     }
+
+    @Test
+    public void breadthFirst(){
+        Graph graph = new Graph();
+        graph.addVertex("Jawad");
+        graph.addVertex("Noor");
+        graph.addVertex("Areen");
+        graph.addVertex("Maram");
+        graph.addVertex("Enas");
+
+        graph.addEdge("Jawad" , "Noor");
+        graph.addEdge("Areen" , "Noor");
+        graph.addEdge("Enas" , "Jawad");
+
+        Vertex vertex = new Vertex("Jawad");
+        Vertex vertex2 = new Vertex("Noor");
+        Vertex vertex3 = new Vertex("Enas");
+        Vertex vertex4 = new Vertex("Areen");
+
+        List<Vertex> list= new ArrayList<>();
+        list.add(vertex);
+        list.add(vertex2);
+        list.add(vertex3);
+        list.add(vertex4);
+
+        assertEquals(list , graph.breadthFirst(vertex));
+
+    }
 }
