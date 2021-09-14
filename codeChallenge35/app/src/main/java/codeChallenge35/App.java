@@ -21,6 +21,7 @@ public class App {
         graph.addEdge("Ibrahim" , "Ali");
         graph.addEdge("Ibrahim" , "Omar");
         graph.addEdge("Osama" , "Ali");
+        graph.addEdge("Osama" , "Ahmad");
 
         Vertex vertex = new Vertex("Ibrahim");
 //        System.out.println(graph.getNeighbors(vertex));
