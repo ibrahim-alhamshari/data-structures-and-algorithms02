@@ -15,11 +15,18 @@ public class App {
         graph.addVertex("Ibrahim");
         graph.addVertex("Ali");
         graph.addVertex("Ahmad");
+        graph.addVertex("Osama");
+        graph.addVertex("Omar");
 
         graph.addEdge("Ibrahim" , "Ali");
+        graph.addEdge("Ibrahim" , "Omar");
+        graph.addEdge("Osama" , "Ali");
+
         Vertex vertex = new Vertex("Ibrahim");
-        System.out.println(graph.getNeighbors(vertex));
+//        System.out.println(graph.getNeighbors(vertex));
 
         graph.getSize();
+
+        System.out.println(graph.breadthFirst(vertex));
     }
 }
