@@ -24,7 +24,7 @@ public class App {
         graph.addEdge("Ibrahim" , "Ali", 15);
         graph.addEdge("Ibrahim" , "Omar", 60 );
         graph.addEdge("Osama" , "Ali", 14);
-        graph.addEdge("Osama" , "Ahmad", 30);
+        graph.addEdge("Omar" , "Ahmad", 30);
 
         Vertex vertex = new Vertex("Ibrahim");
 //        System.out.println(graph.toString());
@@ -33,8 +33,9 @@ public class App {
 
         List list= new ArrayList();
         list.add("Ibrahim");
+        list.add("Omar");
         list.add("Ahmad");
 
-        System.out.println(graph.businessTrip(graph, list));
+        System.out.println(graph.citiesTrip(graph, list));
     }
 }
