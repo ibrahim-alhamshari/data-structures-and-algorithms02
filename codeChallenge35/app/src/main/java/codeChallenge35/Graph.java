@@ -75,23 +75,20 @@ public class Graph {
     private int totalCost = 0;
     public int citiesTrip(Graph graph, List<String> cities){
         totalCost = 0;
-        int citiesSize = cities.size();
-        if (citiesSize <= 1  ){
+        if (cities.size() <= 1  ){
             return 0;
         }
         if(graph == null){
             return 0;
         }
-
-        for (int i = 0; i < citiesSize-1; i ++){
-
-            looperFunction(cities.get(i), cities.get(i + 1), graph);
+        for (int i = 0; i < cities.size()-1; i ++){
+            calculatePrice(cities.get(i), cities.get(i + 1), graph);
         }
 
         return totalCost;
     }
 
-    private void looperFunction(String city1, String city2, Graph graph){
+    private void calculatePrice(String city1, String city2, Graph graph){
         Vertex vertex= new Vertex(city1);
         if (graph.getNeighbors(vertex) == null){
             return;
