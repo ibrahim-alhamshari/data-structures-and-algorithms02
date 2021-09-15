@@ -111,4 +111,44 @@ class AppTest {
         assertEquals(list , graph.breadthFirst(vertex));
 
     }
+
+    @Test
+    public void cityTrip(){
+        Graph graph = new Graph();
+
+        graph.addVertex("Ibrahim");
+        graph.addVertex("Qaed");
+        graph.addVertex("Ali");
+        graph.addVertex("Ahmad");
+        graph.addVertex("Osama");
+        graph.addVertex("Omar");
+        graph.addEdge("Ibrahim" , "Ali", 15);
+        graph.addEdge("Ibrahim" , "Omar", 60 );
+        graph.addEdge("Osama" , "Ali", 14);
+        graph.addEdge("Omar" , "Ahmad", 30);
+
+        List list= new ArrayList();
+        list.add("Ibrahim");
+        list.add("Omar");
+        list.add("Ahmad");
+
+        assertEquals(90 , graph.citiesTrip(graph, list));
+
+        List list2= new ArrayList();
+        list2.add("Osama");
+        list2.add("Ahmad");
+        assertEquals(0 , graph.citiesTrip(graph , list2));
+
+        List list3= new ArrayList();
+        list3.add("Omar");
+        list3.add("Ali");
+        list3.add("Ibrahim");
+
+        assertEquals(15 , graph.citiesTrip(graph, list3));
+
+        List list4= new ArrayList();
+        list4.add("Qaed");
+
+        assertEquals( 0, graph.citiesTrip(graph , list4));
+    }
 }

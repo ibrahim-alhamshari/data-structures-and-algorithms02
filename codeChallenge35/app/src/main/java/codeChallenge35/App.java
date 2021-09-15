@@ -3,6 +3,9 @@
  */
 package codeChallenge35;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class App {
     public String getGreeting() {
         return "Hello World!";
@@ -18,16 +21,21 @@ public class App {
         graph.addVertex("Osama");
         graph.addVertex("Omar");
 
-        graph.addEdge("Ibrahim" , "Ali");
-        graph.addEdge("Ibrahim" , "Omar");
-        graph.addEdge("Osama" , "Ali");
-        graph.addEdge("Osama" , "Ahmad");
+        graph.addEdge("Ibrahim" , "Ali", 15);
+        graph.addEdge("Ibrahim" , "Omar", 60 );
+        graph.addEdge("Osama" , "Ali", 14);
+        graph.addEdge("Omar" , "Ahmad", 30);
 
         Vertex vertex = new Vertex("Ibrahim");
-//        System.out.println(graph.getNeighbors(vertex));
+//        System.out.println(graph.toString());
 
         graph.getSize();
 
-        System.out.println(graph.breadthFirst(vertex));
+        List list= new ArrayList();
+        list.add("Ibrahim");
+        list.add("Omar");
+        list.add("Ahmad");
+
+        System.out.println(graph.citiesTrip(graph, list));
     }
 }

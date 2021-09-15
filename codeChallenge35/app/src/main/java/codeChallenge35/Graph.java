@@ -1,9 +1,6 @@
 package codeChallenge35;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Graph {
 
@@ -11,7 +8,7 @@ public class Graph {
 
 
 
-    public void setAdjVertices(Map<Vertex, List<Vertex>> adjVertices) {
+        public void setAdjVertices(Map<Vertex, List<Vertex>> adjVertices) {
         this.adjVertices = adjVertices;
     }
 
@@ -34,7 +31,7 @@ public class Graph {
     }
 
     public List<Vertex> getNeighbors(Vertex vertex){
-        return adjVertices.get(vertex);
+        return (List<Vertex>) adjVertices.get(vertex);
     }
 
     public int getSize(){
@@ -63,5 +60,45 @@ public class Graph {
         return visited;
     }
 
+    public void addEdge(String label1, String label2, int weight) {
+        Vertex wVertex1 = new Vertex(label1, weight);
+        Vertex wVertex2 = new Vertex(label2, weight);
 
+        Vertex vertex1 = new Vertex(label1, weight);
+        Vertex vertex2 = new Vertex(label2, weight);
+
+        adjVertices.get(vertex1).add(wVertex2);
+        adjVertices.get(vertex2).add(wVertex1);
+    }
+
+
+    private int totalCost = 0;
+    public int citiesTrip(Graph graph, List<String> cities){
+        totalCost = 0;
+        if (cities.size() <= 1  ){
+            return 0;
+        }
+        if(graph == null){
+            return 0;
+        }
+        for (int i = 0; i < cities.size()-1; i ++){
+            calculatePrice(cities.get(i), cities.get(i + 1), graph);
+        }
+
+        return totalCost;
+    }
+
+    private void calculatePrice(String city1, String city2, Graph graph){
+        Vertex vertex= new Vertex(city1);
+        if (graph.getNeighbors(vertex) == null){
+            return;
+        }
+
+        for (Vertex vertex1: graph.getNeighbors(vertex)) {
+            if (Objects.equals(city2, vertex1.label)){
+                totalCost += vertex1.weight;
+                break;
+            }
+        }
+    }
 }
