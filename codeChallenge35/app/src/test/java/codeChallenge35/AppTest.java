@@ -151,4 +151,61 @@ class AppTest {
 
         assertEquals( 0, graph.citiesTrip(graph , list4));
     }
+
+    @Test
+    public void depthFirstTraversal(){
+        Graph graph = new Graph();
+        graph.addVertex("A");
+        graph.addVertex("B");
+        graph.addVertex("C");
+        graph.addVertex("D");
+        graph.addVertex("E");
+        graph.addVertex("F");
+        graph.addVertex("G");
+        graph.addVertex("H");
+        graph.addVertex("R");
+
+        graph.addEdge("A" , "B", 30);
+        graph.addEdge("A" , "D", 30);
+        graph.addEdge("C" , "B", 30);
+        graph.addEdge("C" , "G", 30);
+        graph.addEdge("G" , "C", 30);
+        graph.addEdge("D" , "A", 30);
+        graph.addEdge("D" , "B", 30);
+        graph.addEdge("D" , "E", 30);
+        graph.addEdge("D" , "H", 30);
+        graph.addEdge("D" , "F", 30);
+
+        Vertex vertex= new Vertex("A");
+
+        List list= new ArrayList();
+        list.add("A");
+        list.add("B");
+        list.add("C");
+        list.add("G");
+        list.add("D");
+        list.add("E");
+        list.add("H");
+        list.add("F");
+
+        assertEquals(list , graph.depthFirst(vertex));
+    }
+
+    @Test
+    public void depthFirst2(){
+        Graph graph= new Graph();
+        graph.addVertex("F");
+        graph.addVertex("G");
+        graph.addVertex("H");
+        graph.addVertex("R");
+
+        graph.addEdge("F" , "G", 30);
+        graph.addEdge("G" , "H", 30);
+        graph.addEdge("H" , "F", 30);
+
+        List list= new ArrayList();
+        list.add("R");
+        Vertex vertex1= new Vertex("R");
+        assertEquals(list, graph.depthFirst(vertex1));
+    }
 }

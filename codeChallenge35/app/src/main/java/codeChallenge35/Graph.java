@@ -4,11 +4,9 @@ import java.util.*;
 
 public class Graph {
 
-    private Map<Vertex, List<Vertex>> adjVertices = new HashMap<>();
+   private Map<Vertex, List<Vertex>> adjVertices = new HashMap<>();
 
-
-
-        public void setAdjVertices(Map<Vertex, List<Vertex>> adjVertices) {
+   public void setAdjVertices(Map<Vertex, List<Vertex>> adjVertices) {
         this.adjVertices = adjVertices;
     }
 
@@ -100,5 +98,24 @@ public class Graph {
                 break;
             }
         }
+    }
+
+    List list= new ArrayList();
+    public List<Vertex> depthFirst(Vertex vertex){
+        if(vertex == null){
+            return list;
+        }
+        list.add(vertex.label);
+        System.out.println(vertex);
+    List<Vertex> neighborsList = getNeighbors(vertex);
+    if (neighborsList.size()==0){
+        return list;
+    }
+        for ( Vertex v: neighborsList) {
+            if(!list.contains(v.label))
+            depthFirst(v);
+        }
+
+        return list;
     }
 }

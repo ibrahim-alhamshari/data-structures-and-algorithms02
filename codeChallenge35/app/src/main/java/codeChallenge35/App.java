@@ -27,7 +27,7 @@ public class App {
         graph.addEdge("Omar" , "Ahmad", 30);
 
         Vertex vertex = new Vertex("Ibrahim");
-//        System.out.println(graph.toString());
+//        System.out.println(graph.depthFirst(vertex));
 
         graph.getSize();
 
@@ -37,5 +37,34 @@ public class App {
         list.add("Ahmad");
 
         System.out.println(graph.citiesTrip(graph, list));
+
+//****************************************************** Depth first *************************************************
+
+    Graph graph1 = new Graph();
+        graph1.addVertex("A");
+        graph1.addVertex("B");
+        graph1.addVertex("C");
+        graph1.addVertex("D");
+        graph1.addVertex("E");
+        graph1.addVertex("F");
+        graph1.addVertex("G");
+        graph1.addVertex("H");
+        graph1.addVertex("R");
+
+        graph1.addEdge("A" , "B", 30);
+        graph1.addEdge("A" , "D", 30);
+        graph1.addEdge("C" , "B", 30);
+        graph1.addEdge("C" , "G", 30);
+        graph1.addEdge("G" , "C", 30);
+        graph1.addEdge("D" , "A", 30);
+        graph1.addEdge("D" , "B", 30);
+        graph1.addEdge("D" , "E", 30);
+        graph1.addEdge("D" , "H", 30);
+        graph1.addEdge("D" , "F", 30);
+
+
+        Vertex vertex1= new Vertex("R");
+        System.out.println(graph1.depthFirst(vertex1));
+
     }
 }
