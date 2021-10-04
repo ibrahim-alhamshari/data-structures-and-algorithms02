@@ -3,6 +3,8 @@
  */
 package codeChallenge15;
 
+import java.util.Scanner;
+
 public class App {
     public String getGreeting() {
         return "Hello world.";
@@ -12,39 +14,15 @@ public class App {
 
         System.out.println(new App().getGreeting());
 
-        BinarySearchTree binarySearchTree = new BinarySearchTree();
-        binarySearchTree.add(45);
-        binarySearchTree.add(50);
-        binarySearchTree.add(55);
-        binarySearchTree.add(47);
+     double studentGPA= 3.63;
+     String studentName = "Ibrahim";
+     String lastName = "Alhamshari";
 
-        Node root= new Node(15);
-        root.left=new Node(20);
-        root.right= new Node(10);
-        root.left.left= new Node(25);
-        root.left.right= new Node(25);
-        root.right.left= new Node(25);
-        root.right.right = new Node(25);
+        System.out.println(studentName+" "+ lastName +" has GPA: " + studentGPA);
 
-        Node root2= new Node(15);
-        root2.left=new Node(20);
-        root2.right= new Node(10);
-        root2.left.left= new Node(25);
-        root2.left.right= new Node(25);
-        root2.right.left= new Node(25);
-        root2.right.right = new Node(25);
+        Scanner input = new Scanner(System.in);
+       studentGPA= input.nextDouble();
 
-        System.out.println(binarySearchTree.ifMirror(root, root2));
-
-//                       15                           15
-//                20            10             20              10
-//            25      25     25                   25       25       25
-
-//        binarySearchTree.contains(8);
-
-//        binarySearchTree.findMaxValue();
-
-
-        System.out.println(binarySearchTree.toString());
+        System.out.println(studentName+" "+ lastName +" has a new GPA: " + studentGPA);
     }
 }
