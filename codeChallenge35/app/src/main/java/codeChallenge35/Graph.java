@@ -71,19 +71,19 @@ public class Graph {
 
 
     private int totalCost = 0;
-    public int citiesTrip(Graph graph, List<String> cities){
+    public String citiesTrip(Graph graph, List<String> cities){
         totalCost = 0;
         if (cities.size() <= 1  ){
-            return 0;
+            return "false" + "0$";
         }
         if(graph == null){
-            return 0;
+            return "false" + "0$";
         }
         for (int i = 0; i < cities.size()-1; i ++){
             calculatePrice(cities.get(i), cities.get(i + 1), graph);
         }
 
-        return totalCost;
+        return "true, " + totalCost+"$";
     }
 
     private void calculatePrice(String city1, String city2, Graph graph){
@@ -115,7 +115,6 @@ public class Graph {
             if(!list.contains(v.label))
             depthFirst(v);
         }
-
         return list;
     }
 }

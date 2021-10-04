@@ -36,7 +36,7 @@ public class App {
         list.add("Omar");
         list.add("Ahmad");
 
-        System.out.println(graph.citiesTrip(graph, list));
+//        System.out.println(graph.citiesTrip(graph, list));
 
 //****************************************************** Depth first *************************************************
 
@@ -63,7 +63,7 @@ public class App {
         graph1.addEdge("D" , "F", 30);
 
 
-        Vertex vertex1= new Vertex("R");
+        Vertex vertex1= new Vertex("A");
         System.out.println(graph1.depthFirst(vertex1));
 
     }
