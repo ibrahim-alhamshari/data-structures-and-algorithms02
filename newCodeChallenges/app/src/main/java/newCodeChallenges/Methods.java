@@ -1,6 +1,7 @@
 package newCodeChallenges;
 
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Methods {
 
@@ -48,9 +49,43 @@ public class Methods {
         int actualSum = l*(a1 +a2)/2;
 //        System.out.println(actualSum);
 //        System.out.println(arrSum);
-
         return actualSum - arrSum;
     }
+//******************************************************* End Missing number **************************************
 
-//******************************************************* Start Missing number **************************************
+//************************************************ Start Two Strings have same char *******************************
+    public boolean haveSameChar(String s1 , String s2){
+        Map<Character, Integer> map1 = new HashMap<>();
+        Map<Character, Integer> map2 = new HashMap<>();
+        System.out.println(s1.toCharArray().length);
+        System.out.println(s2.toCharArray().length);
+        if(s1.toCharArray().length != s2.toCharArray().length) return false;
+
+        int count = 1;
+        for (int i=0 ; i<s1.length() ; i++){
+            if(map1.containsKey(s1.charAt(i))){
+                map1.put(s1.charAt(i) , map1.get(s1.charAt(i)) +1);
+            }else {
+                map1.put(s1.charAt(i) , 1);
+            }
+
+            if(map2.containsKey(s2.charAt(i))){
+                map2.put(s2.charAt(i) , map2.get(s2.charAt(i)) +1);
+            }else {
+                map2.put(s2.charAt(i) ,1);
+            }
+        }
+
+        for(int i=0; i<map1.size() ; i++){
+            if(map2.containsKey(s1.charAt(i)) && (map1.get(s1.charAt(i)) == map2.get(s1.charAt(i)))){
+                System.out.println("yes");
+            }else {
+                return false;
+            }
+        }
+        System.out.println(map1);
+        System.out.println(map2);
+        return true;
+    }
+//************************************************ End Two Strings have same char *******************************
 }

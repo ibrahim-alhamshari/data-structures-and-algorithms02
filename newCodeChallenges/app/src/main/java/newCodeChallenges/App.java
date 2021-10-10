@@ -20,13 +20,20 @@ public class App {
         //************************** Second Max ********************
         int[] arr1={-1 , -6 , -3 ,- 2};
         int secMax = methods.secondMax(arr1);
-        System.out.println(secMax);
+//        System.out.println(secMax);
         //**********************************************************
 
         //************************** Missing Number ****************
         int[] arr = {0, 6, 9, 12, 15};
         int missNum = methods.missingNumber(arr);
-        System.out.println(missNum);
+//        System.out.println(missNum);
+        //************************************************************
+
+        //************************ Have same char ********************
+        String s1="aacb";
+        String s2="abac";
+        boolean b = methods.haveSameChar(s1, s2);
+        System.out.println(b);
         //************************************************************
     }
 }
