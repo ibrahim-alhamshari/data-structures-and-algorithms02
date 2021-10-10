@@ -6,7 +6,7 @@ import java.util.Map;
 public class Methods {
 
 
-//*******************************************************Start second Max *********************************************
+//******************************************************* second Max *********************************************
     public int secondMax(int[] arr){
         if(arr.length==1) return arr[0];
 
@@ -31,10 +31,10 @@ public class Methods {
 //        System.out.println(sec);
         return sec;
     }
-//*******************************************************End second Max *********************************************
+//*************************************************************************************************************
 
 
-//******************************************************* Start Missing number **************************************
+//******************************************************* Missing number **************************************
     public int missingNumber(int[] arr){
 
         int arrSum=0;
@@ -51,9 +51,9 @@ public class Methods {
 //        System.out.println(arrSum);
         return actualSum - arrSum;
     }
-//******************************************************* End Missing number **************************************
+//***********************************************************************************************************
 
-//************************************************ Start Two Strings have same char *******************************
+//************************************************ Two Strings have same char *******************************
     public boolean haveSameChar(String s1 , String s2){
         Map<Character, Integer> map1 = new HashMap<>();
         Map<Character, Integer> map2 = new HashMap<>();
@@ -73,19 +73,17 @@ public class Methods {
         }
 
         for(int i=0; i<map1.size() ; i++){
-            if(map2.containsKey(s1.charAt(i)) && (map1.get(s1.charAt(i)) == map2.get(s1.charAt(i)))){
-                System.out.println("yes");
-            }else {
-                return false;
+            if(!map2.containsKey(s1.charAt(i)) || (map1.get(s1.charAt(i)) != map2.get(s1.charAt(i)))){
+               return false;
             }
         }
 //        System.out.println(map1);
 //        System.out.println(map2);
         return true;
     }
-//************************************************ End Two Strings have same char *******************************
+//*********************************************************************************************************
 
-//**************************************************** Start Duplicated number **********************************
+//**************************************************** Duplicated number **********************************
     public void duplicatedNum(int[] arr){
         if(arr.length==0 || arr.length==1){
             System.out.println("No duplicated numbers");
@@ -99,8 +97,13 @@ public class Methods {
                 map.put(arr[i] , 1);
             }
         }
-        System.out.println(map);
+        for (Map.Entry<Integer, Integer> entry: map.entrySet()) {
+            if (entry.getValue()>1){
+                System.out.println("Value "+entry.getKey()+" is duplicate " + entry.getValue() +" times");
+            }
+        }
+        System.out.println(map);// Will appear between curly brackets.
+        System.out.println(map.entrySet()); // Will become as an array (with [] brackets).
     }
-
-//**************************************************** Start Duplicated number **********************************
+//****************************************************************************************************
 }
