@@ -2,6 +2,7 @@ package newCodeChallenges;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 public class Methods {
 
@@ -105,5 +106,65 @@ public class Methods {
         System.out.println(map);// Will appear between curly brackets.
         System.out.println(map.entrySet()); // Will become as an array (with [] brackets).
     }
-//****************************************************************************************************
+//********************************************************************************************************
+
+//*********************************************** Print random chars **************************************
+public void printRandomChars(){
+    Scanner scan = new Scanner(System.in);
+    int y = scan.nextInt();
+
+    int[] count = new int[26]; // a-z == 0-26
+
+    while (y-- >0){
+        int x = (int) (Math.random()*26); // random number between 0-26
+        count[x] = count[x] +1;
+    }
+
+    for (int i=0 ; i < count.length ; i++){
+        char letter = (char) (i + 'a');
+        if(count[i] != 0)
+            System.out.println("The letter " + letter + " has frequent "+ count[i] );
+    }
+    scan.close();
+}
+//********************************************************************************************************
+
+//****************************************** Common max number *******************************************
+
+    public void commonMaxNum1(int x , int y){ // traditional method
+        int c=0;
+        if(x<y){
+            c=x;
+        }else {
+            c=y;
+        }
+
+        for(int i=c; c> 0; i--){
+            if(x%i == 0 && y%i==0){
+                System.out.println("1- Common max number: "+i);
+                break;
+            }
+        }
+    }
+
+    public void commonMaxNum2(int x , int y){
+        if(x==0){
+            System.out.println("2- Common max number: "+y);
+        }else if(y==0){
+            System.out.println("2- Common max number: "+x);
+        }
+
+        if(x< y){
+            x= y;
+            y= x;
+        }
+        while (y != 0){
+            int tmp= x;
+            x = y;
+            y=tmp % y;
+        }
+        System.out.println("2- Common max number: "+x);
+    }
+//*****************************************************************************************
+
 }
