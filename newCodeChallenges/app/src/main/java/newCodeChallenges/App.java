@@ -43,7 +43,7 @@ public class App {
 //        methods.printRandomChars();
 
         methods.commonMaxNum1(18 , 12);
-        methods.commonMaxNum2(18 , 12);
+        methods.commonMaxNum2(60 , 45);
 
     }
 }

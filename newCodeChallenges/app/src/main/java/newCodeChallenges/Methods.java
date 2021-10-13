@@ -132,14 +132,14 @@ public void printRandomChars(){
 //****************************************** Common max number *******************************************
 
     public void commonMaxNum1(int x , int y){ // traditional method
-        int c=0;
-        if(x<y){
-            c=x;
-        }else {
-            c=y;
+
+        if(y>x){
+            int tmp=x;
+            x=y;
+            y=tmp;
         }
 
-        for(int i=c; c> 0; i--){
+        for(int i=x; y> 0; i--){
             if(x%i == 0 && y%i==0){
                 System.out.println("1- Common max number: "+i);
                 break;
@@ -147,23 +147,24 @@ public void printRandomChars(){
         }
     }
 
-    public void commonMaxNum2(int x , int y){
-        if(x==0){
-            System.out.println("2- Common max number: "+y);
-        }else if(y==0){
-            System.out.println("2- Common max number: "+x);
+    public void commonMaxNum2(int a , int b){
+        if(a==0){
+            System.out.println("2- Common max number: "+b);
+        }else if(b==0){
+            System.out.println("2- Common max number: "+a);
         }
 
-        if(x< y){
-            x= y;
-            y= x;
+        if(a< b){
+            int tmp=a;
+            a= b;
+            b= tmp;
         }
-        while (y != 0){
-            int tmp= x;
-            x = y;
-            y=tmp % y;
+        while (b != 0){
+            int tmp= a;
+            a = b;
+            b=tmp % b;
         }
-        System.out.println("2- Common max number: "+x);
+        System.out.println("2- Common max number: "+a);
     }
 //*****************************************************************************************
 
