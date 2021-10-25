@@ -3,47 +3,34 @@
  */
 package newCodeChallenges;
 
-import org.checkerframework.checker.units.qual.A;
-
-import java.util.ArrayList;
-
 public class App {
     public String getGreeting() {
         return "Hello World!";
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        List<String> list= new List<String>();
+        list.add("Ali");
+        list.add("Malek");
+        list.add("Khaled");
+        list.add("lana");
 
-        Methods methods = new Methods();
-//
-//        //************************** Second Max ********************
-//        int[] arr1={-1 , -6 , -3 ,- 2};
-//        int secMax = methods.secondMax(arr1);
-////        System.out.println(secMax);
-//        //**********************************************************
-//
-//        //************************** Missing Number ****************
-//        int[] arr = {0, 6, 9, 12, 15};
-//        int missNum = methods.missingNumber(arr);
-////        System.out.println(missNum);
-//        //************************************************************
-//
-//        //************************ Have same char ********************
-//        String s1="acba";
-//        String s2="abac";
-//        boolean b = methods.haveSameChar(s1, s2);
-//        System.out.println(b);
-//        //************************************************************
-//
-//        // ************************** Duplicate **********************
-//        int[] arr2={12 , 31 , 51 , 12 , 4 , 31};
-//        methods.duplicatedNum(arr2);
-        //************************************************************
-//        methods.printRandomChars();
+        list.add("Noor" , 1);
 
-        methods.commonMaxNum1(18 , 12);
-        methods.commonMaxNum2(60 , 45);
+        System.out.println(list.get(0));
+        System.out.println(list.get(1));
+        System.out.println(list.get(2));
+        System.out.println(list.get(3));
+        System.out.println(list.get(4));
+
+        System.out.println("+++++++++");
+
+        list.remove(1);
+        System.out.println(list.get(0));
+        System.out.println(list.get(1));
+        System.out.println(list.get(2));
+        System.out.println(list.get(3));
+        System.out.println(list.get(4));
 
     }
 }

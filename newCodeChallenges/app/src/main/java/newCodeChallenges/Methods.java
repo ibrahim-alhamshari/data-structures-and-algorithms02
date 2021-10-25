@@ -1,8 +1,7 @@
 package newCodeChallenges;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.io.BufferedWriter;
+import java.util.*;
 
 public class Methods {
 
@@ -167,5 +166,124 @@ public void printRandomChars(){
         System.out.println("2- Common max number: "+a);
     }
 //*****************************************************************************************
+
+//**************************************** Diagonal difference **********************************************
+    public static int diagonalDifference(List<List<Integer>> arr) {
+        int a=0;
+        int b=0;
+        for(int i=0; i<arr.size() ; i++){
+            a=a+arr.get(i).get(i);
+
+            b= b+arr.get(i).get(arr.size()-1-i);
+        }
+        if(b>a){
+            return b-a;
+        }
+        return a-b;
+    }
+//*********************************************************************************************
+
+//*********************************************************************************************
+    //ts base and height are both equal to n.
+    // It is drawn using # symbols and spaces. The last line is not preceded by any spaces.
+    //Write a program that prints a staircase of size n.
+    public static void staircase(int n) {
+        int c = n - 1;
+        for (int i = 0; i < n; i++) {
+            for (int y = 0; y < n; y++) {
+                if (y < c) {
+                    System.out.print(' ');
+                } else {
+                    System.out.print('#');
+                }
+            }
+            c--;
+            System.out.println();
+        }
+    }
+//*********************************************************************************************
+public static void miniMaxSum(List<Integer> arr) {
+    long max,min;
+    if(arr.get(0)>arr.get(1)){
+        max=arr.get(0);
+        min=arr.get(1);
+    }else{
+        max=arr.get(1);
+        min=arr.get(0);
+    }
+    for(int i=2; i<5 ; i++){
+        if(arr.get(i)>max) max=arr.get(i);
+        if(arr.get(i)<min) min=arr.get(i);
+
+    }
+    long sumMax=0;
+    long sumMin=0;
+    for(int i=0; i<5;i++){
+        if(arr.get(i) != max){
+            sumMin=sumMin+arr.get(i);
+        }else{
+            max=0;// When we have edge case, if two max numbers arr there.
+            // And I'm assigning to zero; to sum anything else because the zero will not affect the solution(summation).
+        }
+        if(arr.get(i) != min){
+            sumMax= sumMax+arr.get(i);
+        }else{
+            min=0;
+        }
+    }
+
+    System.out.println(sumMin + " " + sumMax);
+}
+
+public boolean ifPalindrome(String s1){
+        int n=s1.length();
+        for(int i=0; i<s1.length() ; i++){
+            if(s1.charAt(i) != s1.charAt(n-1-i)){
+                return false;
+            }
+        }
+        return true;
+}
+
+//public int occurrences(String s1, String s2){
+//        int count=0;
+//        int n=s1.length();
+//        for (int i=0 ; i<s2.length(); i=i+n){
+//            if(s1==){
+//                count= count+1;
+//            }
+//        }
+//    System.out.println(count);
+//        return count;
+//}
+
+public void rotateArray(int k , int[] arr){
+
+    for(int i=0; i< k; i++){
+        int temp= arr[arr.length-1];
+
+        for(int y= arr.length-1; y>0; y--){ //{1, 2 ,3, 4 ,5, 6 ,7}
+            arr[y]= arr[y-1];
+        }
+        arr[0]=temp;
+    }
+    System.out.println(Arrays.toString(arr));
+}
+
+public void excel_Format(int n){
+//        Scanner scanner= new Scanner(System.in);
+//        int num= scanner.nextInt();
+    System.out.println((n-1)%26);
+        StringBuilder column=new StringBuilder();
+       while (n>0){
+           System.out.println(n);
+        int index=(n-1)%26;
+        column.append((char)(index +'A'));
+        n= (n-1)/26;
+       }
+
+    System.out.println(column.reverse());
+//    scanner.close();
+}
 
 }
